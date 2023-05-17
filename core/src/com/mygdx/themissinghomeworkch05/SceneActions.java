@@ -1,5 +1,6 @@
 package com.mygdx.themissinghomeworkch05;
 
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Align;
@@ -31,5 +32,13 @@ public class SceneActions extends Actions {
 
     public static Action moveToOutsideRight(float duration) {
         return Actions.moveToAligned(BaseActor.getWorldBounds().width, 0, Align.bottomLeft, duration);
+    }
+
+    public static Action setAnimation(Animation a) {
+        return new SetAnimationAction(a);
+    }
+
+    public static Action typewriter(String s) {
+        return new TypewriterAction(s);
     }
 }
